@@ -19,6 +19,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <MetaTags/>
             </head>
             <body>
+                <WebApp />
             </body>
         </html>
     }
@@ -26,6 +27,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 
 #[component]
 pub fn WebApp() -> impl IntoView {
+    LocalResource::new(|| run_app());
     view! {
         <Title text="Welcome to Leptos"/>
     }
